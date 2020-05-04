@@ -1,0 +1,305 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chunchana  2020</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{% static "img/favicon.png" %}" rel="icon">
+  <link href="{% static "img/apple-touch-icon.png" %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="{% static "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" %}" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static "lib/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" %}" rel="stylesheet"/>
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static "lib/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+  <link href="{% static "lib/animate/animate.min.css" %}" rel="stylesheet">
+  <link href="{% static "lib/ionicons/css/ionicons.min.css" %}" rel="stylesheet">
+  <link href="{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}" rel="stylesheet">
+  <link href="{% static "lib/lightbox/css/lightbox.min.css" %}" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{% static "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %}">
+
+  <script src="{% static "https://code.jquery.com/jquery-3.3.1.min.js" %}"></script>
+  <script src="{% static "https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" %}" type="text/javascript"></script>
+  <link href="{% static "https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" %}" rel="stylesheet" type="text/css" />
+  <!-- Main Stylesheet File -->
+  <link href="{% static "css/profile.css" %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">Chunchana 2020</a></h1>
+        
+  
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#Events">Events</a>
+            <ul>
+              <li><a href="#">Dance</a></li>
+              <li><a href="#">Theater</a></li>
+              <li><a href="#">Literature </a></li>
+              <li><a href="#">Fine_arts</a></li>
+              <li><a href="#">Music</a></li>
+              <li><a href="#">Gaming</a></li>
+            </ul>
+          </li>
+          <li class="Departments"><a href="#">Departments</a>
+            <ul>
+              <li><a href="#">Electronics & Communication</a></li>
+              <li><a href="#">Civil Engineering </a></li>
+              <li><a href="CSE.html">Computer science</a></li>
+              <li><a href="#">Mechanical Engineering</a></li>
+              <li><a href="#">Electrical & Electronics</a></li>
+              <li><a href="#">Information science & Engineering</a></li>
+            </ul>
+          </li>
+         
+          <li class="Departments" ><a href="#contact">Contact</a>
+          <ul>
+            <li><a href="#Report">Report Malicious</a></li>
+            <li><a href="#Emergency">Emergency</a></li>
+          </ul>
+          
+        </li > 
+       
+       
+      
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+<br><br>
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Student Registration form</h3>
+          <h6>Students interested in various events can take up the call and register here followed by the registration your profile will be verified by the Admin member  of your branch on approval you will recieve the further info about the event.</h6>
+        </header>
+     
+
+
+        <section id="contact" class="section-bg wow fadeInUp">
+          <div class="container">
+    
+         
+    
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="{% url 'success' %}" method="POST" role="form" class="Registration" enctype="multipart/form-data">
+                  {% csrf_token %}
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <input type="text" required name="name" class="form-control" id="name" placeholder="Your Full Name as in College ID Card" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input type="email"  required class="form-control" name="email" id="email" placeholder="Your valid Email Address" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                 <input type="phone" class="form-control" required name="phone" id="phone" placeholder="Your 10-Digit Mobile Number" data-rule="minlen:10" data-msg="Please enter your 10 digit Mobile_number" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="usn" class="form-control" required name="usn" id="usn" placeholder="Your University Seat Number" data-rule="minlen:10" data-msg="Please enter your USN" />
+                  <div class="validation"></div>
+                </div>
+                </div>
+                <div class="form-row">
+               
+                <div class="form-group col-md-6">
+                    <label>Date of Birth : </label>
+                <input type="date" id="datepicker" placeholder="Date of Birth" name="dob" width="270" /></div>
+
+                <div>
+                  <label for="Branches">Choose Your Semester : </label>
+
+                  <select id="Branch" name="sem">
+                    <option value="2ndSem" name="2nd Semester">Second Semester</option>
+                    <option value="4thSem" name="4th Semester">Fourth Semester</option>
+                    <option value="6thSem" name="6th Semester">Sixth Semester</option>
+                    <option value="8thSem" name="8th Semester">Eighth Semester</option>
+                  </select>
+                </div>
+
+
+                 <div>
+                  <label for="img">Upload Your Image :</label>
+                  <input type="file" id="img" name="image" accept="image/*"><br><br>
+                </div>
+
+                <div><p>Select the event(s) that you wish to participate:</p></div>
+
+                
+                </div>
+                <div>
+                    <ul style="list-style: none;" class="event-checkbox">
+                        <li><input type="checkbox" id="one" name="event1" value="Event1"><label for="checkboxOne"> Event 1</label></li>
+                        <li><input type="checkbox" id="two" name="event2" value="Event2"><label for="checkboxTwo"> Event 2</label></li>
+                        <li><input type="checkbox" id="three" name="event3" value="Event3"><label for="checkboxThree"> Event 3</label></li>
+                        <li><input type="checkbox" id="four" name="event4" value="Event4"><label for="checkboxFour"> Event 4</label></li>
+                        <li><input type="checkbox" id="five" name="event5" value="Event5"><label for="checkboxFive"> Event 5</label></li>
+                        <li><input type="checkbox" id="six" name="event6" value="Event6"><label for="checkboxSix"> Event 6</label></li>
+                        <li><input type="checkbox" id="seven" name="event7" value="Event7"><label for="checkboxSeven"> Event 7</label></li>
+                        <li><input type="checkbox" id="eight" name="event8" value="Event8"><label for="checkboxEight"> Event 8</label></li>
+                        <li><input type="checkbox" id="nine" name="event9" value="Event9"><label for="checkboxNine"> Event 9</label></li>
+                        <li><input type="checkbox" id="ten" name="event10" value="Event10"><label for="checkboxTen"> Event 10</label></li>
+                        <li><input type="checkbox" id="eleven" name="event11" value="Event11"><label for="checkboxEleven"> Event 11</label></li>
+                        <li><input type="checkbox" id="twelve" name="even12" value="Event12"><label for="checkboxTwelve"> Event 12</label></li>
+                        <li><input type="checkbox" id="thirteen" name="event13" value="Event13"><label for="checkboxThirteen"> Event 13</label></li>
+                        <li><input type="checkbox" id="fourteen" name="event14" value="Event14"><label for="checkboxFourteen"> Event 14</label></li>
+                        <li><input type="checkbox" id="fifteen" name="event15" value="Event15"><label for="checkboxFifteen"> Event 15</label></li>
+                    </ul>
+                </div>
+
+
+                <div class="text-center"><button type="submit">Submit Application</button></div>
+              </form>
+            </div>
+
+          </div>
+        </section><!-- #contact -->
+
+
+
+      </div>
+    </section><!-- #services -->
+
+
+
+
+
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Bitmagnets</h3>
+            <p>You can do better with your team than you can alone. <br>If a team reaches its potential, each player must be willing to subordinate his personal goals to the good of the team</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#about">About us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#events">Events</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of Events </a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Register</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              AIT Engineering college<br>
+              Administrative block <br>
+              beekenahalli rural<br>
+              577102
+              <strong>Phone:</strong> +91 123456789<br>
+              <strong>Email:</strong> info@aitckm.in<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Declaration </h4>
+            <p>A Learning is never complete and ending process perspective varies from every individual if you think you can make a change in it fill out the form over head  to join us for a better cause</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+          </div>post
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Team Bitmagnets</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+       
+        Designed by <a href="#">Bitmagnets AIT</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script>
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap'
+    });
+</script>
+
+  <script src="{% static "lib/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "lib/jquery/jquery-migrate.min.js" %}"></script>
+  <script src="{% static "lib/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "lib/easing/easing.min.js" %}"></script>
+  <script src="{% static "lib/superfish/hoverIntent.js" %}"></script>
+  <script src="{% static "lib/superfish/superfish.min.js" %}"></script>
+  <script src="{% static "lib/wow/wow.min.js" %}"></script>
+  <script src="{% static "lib/waypoints/waypoints.min.js" %}"></script>
+  <script src="{% static "lib/counterup/counterup.min.js" %}"></script>
+  <script src="{% static "lib/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "lib/isotope/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "lib/lightbox/js/lightbox.min.js" %}"></script>
+  <script src="{% static "lib/touchSwipe/jquery.touchSwipe.min.js" %}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static "contactform/contactform.js" %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static "js/main.js" %}"></script>
+
+</body>
+</html>

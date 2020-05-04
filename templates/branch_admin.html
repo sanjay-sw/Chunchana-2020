@@ -1,0 +1,82 @@
+{% load static %}
+
+<html>
+
+<title>Filter Participants</title>
+
+<style>
+    hr.new5 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #f0f0f0, #00b9ff, #59d941, #f0f0f0);
+    }
+        /* Navigation Bar */
+    .navbar{
+      padding: 20px 10px 20px 0px;
+      background-color: #39518f;
+      transition: all ease 0.4s;
+    }
+
+    .log-message{
+        font-size: 18px;
+        color: #FFFFFF;
+        margin-right: 20px;
+    }
+
+</style>
+
+<head>
+  <link href="{% static "lib/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+</head>
+
+<body>
+    {% block body %}
+
+        <!-- Navigation Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-header">
+        <h1 style="text-align: center; font-weight: bold; color: white" >Branch Participants Administration</h1>
+      </div>
+      <div>
+          <span class="log-message">Logged in as {{ request.user }}</span>
+          <a class="btn btn-info" href="{% url 'admin_logout' %}">Logout</a>
+      </div>
+    </nav><br>
+
+    <div class="container-fluid">
+
+        <h2 style="text-align: center; font-weight: bold">Number of Participants : {{ count }} </h2><br>
+
+        <div class="card card-body">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Photo</th>
+                        <th>Name</th>
+                        <th>USN</th>
+                        <th>Semester</th>
+                        <th>Date of Birth</th>
+                        <th></th>
+                    </tr>
+
+                    {% for object in objects %}
+                    <tr>
+                        <td><img src="{{ object.ParticipantImage.url }}" height="220x" width="220px"></td>
+                        <td><h3>{{ object.ParticipantName }}</h3></td>
+                        <td><h3>{{ object.ParticipantUSN }}</h3></td>
+                        <td><h3>{{ object.ParticipantSem }}</h3></td>
+                        <td><h3>{{ object.ParticipantDOB }}</h3></td>
+                        <td><a class="btn btn-lg btn-danger" href="{% url 'delete' object.id %}">Remove</a></td>
+                    </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+
+
+</html>
